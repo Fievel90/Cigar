@@ -1,10 +1,4 @@
-FROM php:7.4-apache
+FROM nginx:1.19-alpine
 
-RUN a2dismod \
-        mpm_event \
-        mpm_prefork \
-        mpm_worker \
-    && a2enmod \
-        mpm_worker
-
-COPY www /var/www/html/
+COPY templates /etc/nginx/templates
+COPY src /usr/share/nginx/html
