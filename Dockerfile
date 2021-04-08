@@ -1,3 +1,3 @@
-FROM tutum/apache-php
+FROM php:7.4-apache
 
-ADD www /app
+COPY www /var/www/html/
